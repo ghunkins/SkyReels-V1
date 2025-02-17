@@ -91,7 +91,7 @@ class SkyreelsVideoPipeline(HunyuanVideoPipeline):
                 num_videos_per_prompt,
                 device=device,
                 dtype=dtype,
-                num_hidden_layers_to_skip=num_hidden_layers_to_skip,  # 与hunyuanvideo实现存在gap
+                num_hidden_layers_to_skip=num_hidden_layers_to_skip,
                 max_sequence_length=max_sequence_length,
             )
         if negative_prompt_embeds is None and do_classifier_free_guidance:
@@ -269,7 +269,7 @@ class SkyreelsVideoPipeline(HunyuanVideoPipeline):
         if pooled_prompt_embeds is not None:
             pooled_prompt_embeds = pooled_prompt_embeds.to(transformer_dtype)
 
-        # 组装成batch
+        ## Embeddings are concatenated to form a batch.
         if self.do_classifier_free_guidance:
             negative_prompt_embeds = negative_prompt_embeds.to(transformer_dtype)
             negative_attention_mask = negative_attention_mask.to(transformer_dtype)
