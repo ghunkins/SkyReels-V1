@@ -98,7 +98,7 @@ When sufficient VRAM is available (e.g., on A800), the lossless version can be r
 **Note: When generating videos, the prompt should start with "FPS-24, " as we referenced the controlling the fps training method from <a href=https://ai.meta.com/research/publications/movie-gen-a-cast-of-media-foundation-models>Moviegen</a> during training.**
 
 ```shell
-SkyReelsModel = "Skywork/SkyReels-V1"
+SkyReelsModel = "Skywork/SkyReels-V1-Hunyuan-T2V"
 python3 video_generate.py \
     --model_id ${SkyReelsModel} \
     --task_type t2v \
@@ -120,12 +120,13 @@ We list the height/width/frame settings we recommend in the following table.
 #### Using Command Line
 
 ```shell
+# SkyReelsModel: If using i2v, switch to Skywork/SkyReels-V1-Hunyuan-I2V.
 # quant: Enable FP8 weight-only quantization
 # offload: Enable offload model
 # high_cpu_memory: Enable pinned memory to reduce the overhead of model offloading.
 # parameters_level: Further reduce GPU VRAM usage.
 # task_type:The task type is designated to support both t2v and i2v. For the execution of an i2v task, it is necessary to input --image.
-SkyReelsModel = "Skywork/SkyReels-V1"
+SkyReelsModel = "Skywork/SkyReels-V1-Hunyuan-T2V"
 python3 video_generate.py \
     --model_id ${SkyReelsModel} \
     --task_type t2v \
@@ -144,6 +145,7 @@ python3 video_generate.py \
 #### 🚀 Parallel Inference on Multiple GPUs
 
 ```shell
+# SkyReelsModel: If using i2v, switch to Skywork/SkyReels-V1-Hunyuan-I2V.
 # quant: Enable FP8 weight-only quantization
 # offload: Enable offload model
 # high_cpu_memory: Enable pinned memory to reduce the overhead of model offloading.
