@@ -137,7 +137,7 @@ python3 video_generate.py \
     --embedded_guidance_scale 1.0 \
     --quant \
     --offload \
-    --hight_cpu_memory \
+    --high_cpu_memory \
     --parameters_level
 ```
 
@@ -159,7 +159,7 @@ python3 video_generate.py \
     --embedded_guidance_scale 1.0 \
     --quant \
     --offload \
-    --hight_cpu_memory \
+    --high_cpu_memory \
     --gpu_num $GPU_NUM
 ```
 
