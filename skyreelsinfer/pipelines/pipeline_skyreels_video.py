@@ -83,7 +83,6 @@ class SkyreelsVideoPipeline(HunyuanVideoPipeline):
         max_sequence_length: int = 256,
     ):
         num_hidden_layers_to_skip = self.clip_skip if self.clip_skip is not None else 0
-        print(f"num_hidden_layers_to_skip: {num_hidden_layers_to_skip}")
         if prompt_embeds is None:
             prompt_embeds, prompt_attention_mask = self._get_llama_prompt_embeds(
                 prompt,
