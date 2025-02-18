@@ -10,7 +10,7 @@ from skyreelsinfer.skyreels_video_infer import SkyReelsVideoInfer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_id", type=str, default="Skywork/SkyReels-V1")
+    parser.add_argument("--model_id", type=str, default="Skywork/SkyReels-V1-Hunyuan-T2V")
     parser.add_argument("--outdir", type=str, default="skyreels")
     parser.add_argument("--guidance_scale", type=float, default=6.0)
     parser.add_argument("--num_frames", type=int, default=97)
